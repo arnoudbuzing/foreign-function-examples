@@ -36,13 +36,26 @@ To compile the C code into a dynamic library on macOS:
 gcc -shared -fPIC -o collatz.dylib collatz.c
 ```
 
-## Wolfram Language Integration
+## Wolfram Language Functions
 
-The integration uses the `ForeignFunctionLoad` system. A key feature of this example is the `CollatzSequence` function in `test_collatz.wl`, which:
-1.  Provides an `OpaqueRawPointer` to C to receive a memory address.
-2.  Calls the C function to perform the calculation and allocation.
-3.  Uses `RawMemoryImport` with a typed `RawPointer` to convert the raw C data into a native Wolfram Language `List`.
-4.  Calls `collatz_free` in C to ensure no memory leaks occur.
+The `test_collatz.wl` script defines high-level functions that wrap the underlying C library.
+
+### `CollatzSequence[n_Integer]`
+
+Computes the full Collatz sequence starting from `n` using the highly efficient single-pass C implementation.
+
+- **Arguments**: 
+  - `n`: A positive integer (must be greater than 0).
+- **Returns**: 
+  - A `List` of integers representing the complete sequence ending in 1.
+  - Returns `{}` if `n` is less than or equal to 0.
+  - Returns `$Failed` if C memory allocation fails.
+- **Implementation Detail**: 
+  - It uses a pointer-to-pointer (`"RawPointer"::["OpaqueRawPointer"]`) to receive a dynamically allocated memory address from the C `collatz_sequence` function.
+  - It converts the result into a native Wolfram `List` using `RawMemoryImport`.
+  - It automatically releases the C-allocated memory using `collatz_free`.
+
+## Wolfram Language Integration
 
 ### Running the Example
 
