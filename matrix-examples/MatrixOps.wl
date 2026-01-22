@@ -5,12 +5,12 @@
 
 (* Path to the library *)
 currentDir = DirectoryName[$InputFileName];
-libPath = FileNameJoin[{currentDir, "matrix_lib.dylib"}];
+libPath = FileNameJoin[{currentDir, "matrix_examples.dylib"}];
 
 (* Check if library exists *)
 If[!FileExistsQ[libPath],
   Print["Library not found at: ", libPath];
-  Print["Please run build.sh first."];
+  Print["Please build the project using CMake."];
   Exit[];
 ];
 

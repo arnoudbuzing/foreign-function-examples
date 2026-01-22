@@ -4,7 +4,7 @@ This repository contains various examples demonstrating the Foreign Function Int
 
 ## Project Structure
 
-- `matrix_helpers/`: Examples of matrix and vector operations.
+- `matrix-examples/`: Examples of matrix and vector operations.
 - `basic-examples/`: Basic FFI examples (scalar types, strings, simple structs).
 - `collatz-example/`: Computing the Collatz sequence using C for performance.
 
@@ -28,16 +28,14 @@ cmake --build build
 
 This will generate the dynamic libraries (`.dylib` on macOS, `.so` on Linux, `.dll` on Windows) directly in each example's directory, where the corresponding `.wl` scripts expect to find them.
 
-## Legacy Build Scripts
 
-Each directory still contains its own `build.sh` script (or equivalent) for individual compilation if preferred.
 
 ## Running the Examples
 
 Each example directory contains one or more `.wl` (Wolfram Language) scripts. You can run them using `wolframscript`:
 
 ```bash
-cd matrix_helpers
+cd matrix-examples
 wolframscript -f MatrixOps.wl
 ```
 
