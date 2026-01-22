@@ -1,4 +1,19 @@
-build
+# OS generated
+.DS_Store
+
+# Build directories (root and recursive)
+build/
+
+# CMake generated artifacts (in case of in-source builds or stray files)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled Object files and Libraries
+*.o
+*.a
 *.dylib
 *.so
 *.dll
+*.exe
