@@ -36,7 +36,6 @@ Each example directory contains one or more `.wl` (Wolfram Language) scripts. Yo
 
 ```bash
 cd matrix-examples
-cd matrix-examples
 wolframscript -f matrix.wlt
 ```
 
