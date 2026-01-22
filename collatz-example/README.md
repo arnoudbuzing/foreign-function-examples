@@ -29,12 +29,18 @@ The library exports the following functions:
 5.  `void collatz_free(int64_t* data)`: Frees memory allocated by `collatz_sequence`.
 
 ## Compilation
-
-To compile the C code into a dynamic library on macOS:
-
-```bash
-gcc -shared -fPIC -o collatz.dylib collatz.c
-```
+ 
+ This project uses a unified CMake build system.
+ 
+ 1.  Navigate to the project root directory.
+ 2.  Run the build commands:
+ 
+ ```bash
+ cmake -B build -S .
+ cmake --build build
+ ```
+ 
+ This will generate `collatz.dylib` (or `.so`/`.dll`) inside this directory (`collatz-example/`).
 
 ## Wolfram Language Functions
 

@@ -17,21 +17,18 @@ This example demonstrates how to efficiently pass numerical array data between t
 ## How to Run
 
 1.  **Build the Library**:
-    Open a terminal in the root directory and run:
-    ```bash
-    cmake -B build -S .
-    cmake --build build
-    ```
-    ```
-    ```
-    This will generate `matrix.dylib`.
-
-2.  **Run the Wolfram Language Script**:
-    You can run the script using `wolframscript`:
-    ```bash
-    ```bash
-    wolframscript -f matrix.wlt
-    ```
+     This project uses a unified CMake build system. From the project root:
+     ```bash
+     cmake -B build -S .
+     cmake --build build
+     ```
+     This will generate `matrix.dylib` (or `.so`/`.dll`) in this directory (`matrix-examples/`).
+ 
+ 2.  **Run the Wolfram Language Script**:
+     You can run the script using `wolframscript`:
+     ```bash
+     wolframscript -f matrix.wlt
+     ```
     Or open `matrix.wl` in a Notebook interface to use the functions.
 
 ## Key Code Snippets

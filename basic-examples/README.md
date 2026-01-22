@@ -15,20 +15,18 @@ This directory contains a simple example of using Foreign Function Interface (FF
 - Wolfram Language (Mathematica, Wolfram Engine, etc.)
 
 ## Building the Library
-
-You can build the shared library using CMake.
-
-1.  Navigate to this directory in your terminal.
-2.  Run the following commands:
-
-    ```bash
-    cmake .
-    make
-    ```
-
-    This will generate `libbasic_examples.dylib` (on macOS), `libbasic_examples.so` (on Linux), or `basic_examples.dll` (on Windows).
-
-    *Note: The CMake configuration is set to output the library in the current directory.*
+ 
+ This project uses a unified CMake build system.
+ 
+ 1.  Navigate to the project root directory.
+ 2.  Run the build commands:
+ 
+     ```bash
+     cmake -B build -S .
+     cmake --build build
+     ```
+ 
+     This will generate `basic_examples.dylib` (or `.so`/`.dll`) inside this directory (`basic-examples/`).
 
 ## Usage
 
