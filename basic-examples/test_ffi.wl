@@ -1,5 +1,5 @@
 (* Define the path to the library *)
-libPath = FileNameJoin[{DirectoryName[$InputFileName], "my_ffi_lib.dylib"}];
+libPath = FileNameJoin[{DirectoryName[$InputFileName], "basic_examples.dylib"}];
 
 (* Load the functions *)
 addIntegers = ForeignFunctionLoad[libPath, "add_integers", {"CInt", "CInt"} -> "CInt"];

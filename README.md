@@ -5,7 +5,7 @@ This repository contains various examples demonstrating the Foreign Function Int
 ## Project Structure
 
 - `matrix_helpers/`: Examples of matrix and vector operations.
-- `my_ffi/`: Basic FFI examples (scalar types, strings, simple structs).
+- `basic-examples/`: Basic FFI examples (scalar types, strings, simple structs).
 - `collatz-example/`: Computing the Collatz sequence using C for performance.
 
 ## Build System (CMake)

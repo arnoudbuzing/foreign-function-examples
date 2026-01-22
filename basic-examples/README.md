@@ -1,10 +1,10 @@
-# My FFI Example
+# Basic Examples
 
 This directory contains a simple example of using Foreign Function Interface (FFI) in Wolfram Language to call C functions.
 
 ## Contents
 
-- `my_ffi_lib.c`: The C source code containing several functions to demonstrate different FFI capabilities (integers, doubles, strings, structs).
+- `basic_examples.c`: The C source code containing several functions to demonstrate different FFI capabilities (integers, doubles, strings, structs).
 - `test_ffi.wl`: A Wolfram Language script that tests the loaded C functions.
 - `CMakeLists.txt`: CMake configuration file for building the shared library.
 
@@ -26,7 +26,7 @@ You can build the shared library using CMake.
     make
     ```
 
-    This will generate `libmy_ffi_lib.dylib` (on macOS), `libmy_ffi_lib.so` (on Linux), or `my_ffi_lib.dll` (on Windows).
+    This will generate `libbasic_examples.dylib` (on macOS), `libbasic_examples.so` (on Linux), or `basic_examples.dll` (on Windows).
 
     *Note: The CMake configuration is set to output the library in the current directory.*
 
