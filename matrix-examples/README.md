@@ -24,12 +24,12 @@ This example demonstrates how to efficiently pass numerical array data between t
      ```
      This will generate `matrix.dylib` (or `.so`/`.dll`) in this directory (`matrix-examples/`).
  
- 2.  **Run the Wolfram Language Script**:
-     You can run the script using `wolframscript`:
-     ```bash
-     wolframscript -f matrix.wlt
+ 2.  **Load the Wolfram Language code**:
+     You can load the code using `Get`:
+     ```wolfram
+     Get["matrix-examples/matrix.wl"]
      ```
-    Or open `matrix.wl` in a Notebook interface to use the functions.
+ 
 
 ## Key Code Snippets
 

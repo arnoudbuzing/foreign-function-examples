@@ -32,11 +32,8 @@ This will generate the dynamic libraries (`.dylib` on macOS, `.so` on Linux, `.d
 
 ## Running the Examples
 
-Each example directory contains one or more `.wl` (Wolfram Language) scripts. You can run them using `wolframscript`:
+Each example directory contains one or more `.wl` (Wolfram Language) files. You can load them using the `Get` function:
 
-```bash
-cd matrix-examples
-wolframscript -f matrix.wlt
+```mathematica
+Get["matrix-examples/matrix.wl"]
 ```
-
-Alternatively, you can open the `.wl` files in the Wolfram Desktop/Mathematica interface.

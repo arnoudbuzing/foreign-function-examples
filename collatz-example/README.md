@@ -6,7 +6,8 @@ This example demonstrates how to use the Wolfram Language **Foreign Function Int
 
 - `collatz.c`: C source code containing the mathematical logic and memory management functions.
 - `collatz.dylib`: The compiled dynamic library (macOS).
-- `test_collatz.wl`: Wolfram Language script to load the library and execute tests.
+- `collatz.wl`: Wolfram Language script to load the library and execute tests.
+- `collatz.wlt`: The verification tests for the collatz functions.
 
 ## Mathematical Overview
 
@@ -44,7 +45,7 @@ The library exports the following functions:
 
 ## Wolfram Language Functions
 
-The `test_collatz.wl` script defines high-level functions that wrap the underlying C library.
+The `collatz.wl` script defines high-level functions that wrap the underlying C library.
 
 ### `CollatzSequence[n_Integer]`
 
@@ -63,17 +64,17 @@ Computes the full Collatz sequence starting from `n` using the highly efficient 
 
 ## Wolfram Language Integration
 
-### Running the Example
+### Running the code
 
-You can run the provided test script using `wolframscript`:
+You can load the code using `Get`:
 
-```bash
-wolframscript -file test_collatz.wl
+```mathematica
+Get["collatz-example/collatz.wl"]
 ```
 
 ### Manual Usage in Wolfram Kernel
 
-```wolfram
+```mathematica
 libPath = "./collatz.dylib";
 collatz = ForeignFunctionLoad[libPath, "collatz", {"Integer64"} -> "Integer64"];
 collatz[5] (* Returns 16 *)

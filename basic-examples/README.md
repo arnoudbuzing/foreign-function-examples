@@ -6,6 +6,7 @@ This directory contains a simple example of using Foreign Function Interface (FF
 
 - `basic_examples.c`: The C source code containing several functions to demonstrate different FFI capabilities (integers, doubles, strings, structs).
 - `basic_examples.wlt`: A Wolfram Language script that tests the loaded C functions.
+- `basic_examples.wl`: The Wolfram Language script to load the library and execute tests.
 - `CMakeLists.txt`: CMake configuration file for building the shared library.
 
 ## Prerequisites
@@ -30,22 +31,20 @@ This directory contains a simple example of using Foreign Function Interface (FF
 
 ## Usage
 
-Once the library is built, you can run the Wolfram Language script to test the functions.
+You can load the code using `Get`:
 
-1.  Open the `basic_examples.wlt` file in Wolfram Desktop or run it with `wolframscript`:
-
-    ```bash
-    wolframscript -f basic_examples.wlt
-    ```
+```mathematica
+Get["basic-examples/basic_examples.wl"]
+```
 
 ## Functions
 
-The C library exports the following functions:
+The following Wolfram Language functions are defined in `basic_examples.wl`:
 
-- `int add_integers(int a, int b)`: Adds two integers.
-- `double multiply_doubles(double a, double b)`: Multiplies two doubles.
-- `int get_string_length(const char *s)`: Returns the length of a string.
-- `char *reverse_string(const char *s)`: Returns a new string which is the reverse of the input. (Caller must free the result).
-- `void free_string(char *s)`: Frees the string allocated by `reverse_string`.
-- `double point_distance(Point p1, Point p2)`: Calculates the distance between two points (structs).
-- `void print_hello()`: Prints a message to stdout.
+- `AddIntegers[a_, b_]`: Adds two integers.
+- `MultiplyDoubles[a_, b_]`: Multiplies two doubles.
+- `GetStringLength[s_String]`: Returns the length of a string.
+- `ReverseString[s_String]`: Returns a new string which is the reverse of the input. (Caller must free the result).
+- `FreeString[s_String]`: Frees the string allocated by `ReverseString`.
+- `PointDistance[p1_, p2_]`: Calculates the distance between two points (structs).
+- `PrintHello[]`: Prints a message to stdout.
