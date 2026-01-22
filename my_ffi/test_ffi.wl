@@ -24,11 +24,14 @@ Print["point_distance[", p1, ", ", p2, "] = ", pointDistance[p1, p2]];
 inputStr = "Antigravity";
 ptr = reverseStringPtr[inputStr];
 If[ptr =!= $Failed && Head[ptr] === OpaqueRawPointer,
+  (* Manage the memory so it is automatically freed when no longer used *)
+  managedPtr = CreateManagedObject[ptr, freeString];
+  
   address = First[ptr];
   typedPtr = RawPointer[address, "UnsignedInteger8"];
   reversedStr = RawMemoryImport[typedPtr, "String"];
   Print["reverse_string[\"", inputStr, "\"] = ", reversedStr];
-  freeString[ptr];
+  (* No need to call freeString[ptr] manually *)
 ,
   Print["Failed to reverse string."];
 ];
