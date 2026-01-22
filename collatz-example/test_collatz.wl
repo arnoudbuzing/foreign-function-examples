@@ -21,11 +21,14 @@ CollatzSequence[n_Integer] := Module[{ptrToPtr, len, dataPtr, result},
     (* Retrieve the C-allocated pointer from the buffer *)
     dataPtr = RawMemoryRead[ptrToPtr];
     
+    (* Manage the memory *)
+    managedDataPtr = CreateManagedObject[dataPtr, collatzFree];
+    
     (* Convert and import the data *)
     result = RawMemoryImport[RawPointer[First[dataPtr], "Integer64"], {"List", len}];
     
-    (* Free the memory in C *)
-    collatzFree[dataPtr];
+    (* No need to manually free *)
+
     
     result
 ]
