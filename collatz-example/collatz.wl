@@ -33,16 +33,4 @@ CollatzSequence[n_Integer] := Module[{ptrToPtr, len, dataPtr, result},
     result
 ]
 
-(* --- Tests --- *)
 
-Print["collatz[5] = ", collatz[5]];
-Print["collatz[18] = ", collatz[18]];
-
-Print["CollatzSequence[5] = ", CollatzSequence[5]];
-Print["CollatzSequence[18] = ", CollatzSequence[18]];
-
-(* Verification *)
-If[CollatzSequence[5] === {5, 16, 8, 4, 2, 1},
-    Print["\nSuccess: All tests passed!"],
-    Print["\nFailure: Some tests failed."]
-];
