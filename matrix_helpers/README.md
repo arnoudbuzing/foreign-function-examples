@@ -17,11 +17,16 @@ This example demonstrates how to efficiently pass numerical array data between t
 ## How to Run
 
 1.  **Build the Library**:
-    Open a terminal in this directory and run:
+    Open a terminal in the root directory and run:
+    ```bash
+    cmake -B build -S .
+    cmake --build build
+    ```
+    Alternatively, you can run the legacy `build.sh` in this directory:
     ```bash
     ./build.sh
     ```
-    This will generate `matrix_lib.dylib`.
+    Both methods will generate `matrix_lib.dylib`.
 
 2.  **Run the Wolfram Language Script**:
     You can run the script using `wolframscript`:
