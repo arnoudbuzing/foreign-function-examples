@@ -10,8 +10,9 @@ This example demonstrates how to efficiently pass numerical array data between t
 
 ## Files
 
-*   `matrix_examples.c`: The C library implementing matrix-vector multiplication and in-place matrix transposition.
-*   `MatrixOps.wl`: The Wolfram Language script that loads the library and tests the functions.
+*   `matrix.c`: The C library implementing matrix-vector multiplication and in-place matrix transposition.
+*   `matrix.wl`: The Wolfram Language script that loads the library (defining `MatrixVectorMultiply` and `TransposeSquareMatrix`).
+*   `matrix.wlt`: The verification tests for the matrix operations.
 
 ## How to Run
 
@@ -22,14 +23,16 @@ This example demonstrates how to efficiently pass numerical array data between t
     cmake --build build
     ```
     ```
-    This will generate `matrix_examples.dylib`.
+    ```
+    This will generate `matrix.dylib`.
 
 2.  **Run the Wolfram Language Script**:
     You can run the script using `wolframscript`:
     ```bash
-    wolframscript -f MatrixOps.wl
+    ```bash
+    wolframscript -f matrix.wlt
     ```
-    Or open `MatrixOps.wl` in a Notebook interface and evaluate the cells.
+    Or open `matrix.wl` in a Notebook interface to use the functions.
 
 ## Key Code Snippets
 

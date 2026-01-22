@@ -36,7 +36,8 @@ Each example directory contains one or more `.wl` (Wolfram Language) scripts. Yo
 
 ```bash
 cd matrix-examples
-wolframscript -f MatrixOps.wl
+cd matrix-examples
+wolframscript -f matrix.wlt
 ```
 
 Alternatively, you can open the `.wl` files in the Wolfram Desktop/Mathematica interface.
