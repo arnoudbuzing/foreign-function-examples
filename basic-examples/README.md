@@ -5,7 +5,7 @@ This directory contains a simple example of using Foreign Function Interface (FF
 ## Contents
 
 - `basic_examples.c`: The C source code containing several functions to demonstrate different FFI capabilities (integers, doubles, strings, structs).
-- `test_ffi.wl`: A Wolfram Language script that tests the loaded C functions.
+- `basic_examples.wlt`: A Wolfram Language script that tests the loaded C functions.
 - `CMakeLists.txt`: CMake configuration file for building the shared library.
 
 ## Prerequisites
@@ -32,10 +32,10 @@ This directory contains a simple example of using Foreign Function Interface (FF
 
 Once the library is built, you can run the Wolfram Language script to test the functions.
 
-1.  Open the `test_ffi.wl` file in Wolfram Desktop or run it with `wolframscript`:
+1.  Open the `basic_examples.wlt` file in Wolfram Desktop or run it with `wolframscript`:
 
     ```bash
-    wolframscript -f test_ffi.wl
+    wolframscript -f basic_examples.wlt
     ```
 
 ## Functions
